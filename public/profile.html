@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Profile - <%= firstname %> <%= lastname %></title>
+		<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/bootstrap/plugins/datepicker/css/datepicker.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<a href="/" class="btn btn-success">Home</a>
+					<span class="alert"></span>
+					<form action="/updateUser" role="form" method="post" id="profile">
+						<input type="hidden" name="id" value="<%= id %>">
+						<div class="input-group">
+							<label class="control-label">First Name</label>
+							<input type="text" name="firstname" class="form-control" value="<%= firstname %>">
+						</div>
+						
+						<div class="input-group">
+							<label class="control-label">Last Name</label>
+							<input type="text" name="lastname" class="form-control" value="<%= lastname %>">
+						</div>
+
+						<div class="input-group">
+							<label class="control-label">Birthdate</label>
+							<input class="datepicker form-control" name="birthdate" id="birthdate" value="<%= birthdate %>">
+						</div>
+
+						<div class="input-group">
+							<label class="control-label">Age</label>
+							<p class="-control-static"><%= age %></p>
+						</div>
+						<button type="submit" class="btn btn-primary update">Update</button>
+						<button type="submit" class="btn btn-danger delete" data-name="<%= firstname %>">Delete</button>
+						<button type="reset" class="btn btn-default">Cancel</button>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script src="/jquery-3.1.1.min.js"></script>
+		<script src="/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/bootstrap/plugins/bootbox.min.js"></script>
+		<script src="/bootstrap/plugins/datepicker/js/bootstrap-datepicker.js"></script>
+		<script src="/datepicker.js"></script>
+		<script src="/main.js"></script>
+	</body>
+</html>
